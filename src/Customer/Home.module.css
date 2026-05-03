@@ -1,0 +1,137 @@
+.container {
+  font-family: Arial, sans-serif;
+  color: #111;
+  padding-bottom: 50px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  padding: 40px 5%;
+  gap: 30px;
+}
+
+.sidebar {
+  width: 20%;
+  border-right: 1px solid #eee;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2.5;
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  flex: 1;
+  background: #000;
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.bannerContent {
+  flex: 1;
+}
+
+.bannerTitle {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.bannerImg {
+  flex: 1;
+  text-align: right;
+}
+
+/* Section */
+.section {
+  padding: 40px 5%;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.redBar {
+  width: 15px;
+  height: 30px;
+  background: #DB4444;
+  border-radius: 4px;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* Products */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+}
+
+.imageBox {
+  height: 250px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #DB4444;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.price {
+  color: #DB4444;
+  font-weight: bold;
+}
+
+/* Categories */
+.categories {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.categoryCard {
+  width: 150px;
+  height: 130px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 5%;
+  text-align: center;
+}

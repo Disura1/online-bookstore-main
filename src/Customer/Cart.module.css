@@ -1,0 +1,156 @@
+.container {
+  font-family: Arial, sans-serif;
+  padding: 40px 5%;
+  color: #111;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 40px;
+}
+
+.breadcrumb span {
+  color: #111;
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-radius: 4px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.cartRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-radius: 4px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.imgWrapper {
+  position: relative;
+}
+
+.removeBtn {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  background-color: #DB4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.qtyInput {
+  width: 60px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.rightText {
+  text-align: right;
+  font-weight: 500;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.btn {
+  padding: 12px 30px;
+  background: none;
+  border: 1px solid #111;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.summarySection {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.coupon {
+  display: flex;
+  gap: 15px;
+}
+
+.input {
+  padding: 12px 20px;
+  border: 1px solid #111;
+  border-radius: 4px;
+  width: 250px;
+}
+
+.primaryBtn {
+  padding: 12px 35px;
+  background-color: #DB4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.summaryBox {
+  border: 1.5px solid #111;
+  border-radius: 4px;
+  padding: 30px;
+  width: 400px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: 15px;
+  background-color: #DB4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}

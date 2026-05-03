@@ -1,0 +1,55 @@
+.lendings-container {
+  background: #0f1b2d;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Card */
+.card-box {
+  background: #16243a;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+}
+
+.search-box input {
+  padding: 6px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  background: #1e90ff;
+  border: none;
+  padding: 6px 10px;
+  color: white;
+}
+
+/* Mini Buttons */
+.mini-btn {
+  width: 25px;
+  height: 25px;
+  background: #1e90ff;
+  border: none;
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+/* Scroll */
+.custom-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Table */
+table {
+  font-size: 14px;
+}
+
+th, td {
+  text-align: center;
+}

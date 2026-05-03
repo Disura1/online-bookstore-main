@@ -1,0 +1,145 @@
+.container {
+  font-family: Arial, sans-serif;
+  padding: 40px 5%;
+  color: #111;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: 1px solid #111;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.card {
+  position: relative;
+}
+
+.imageBox {
+  background: #f5f5f5;
+  border-radius: 4px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.discount {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #DB4444;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cartBtn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+}
+
+/* Info */
+.info {
+  margin-top: 15px;
+}
+
+.name {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.priceRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.price {
+  color: #DB4444;
+  font-weight: bold;
+}
+
+.oldPrice {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+/* Empty */
+.empty {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.primaryBtn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #DB4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Recommendation */
+.recommend {
+  margin-top: 80px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.redBar {
+  width: 15px;
+  height: 30px;
+  background: #DB4444;
+  border-radius: 4px;
+}

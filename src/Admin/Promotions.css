@@ -1,0 +1,60 @@
+.promo-container {
+  background: #0f1b2d;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Table box */
+.table-box {
+  background: #16243a;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+/* Table */
+table {
+  font-size: 14px;
+}
+
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Action buttons */
+.action-btns {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.edit-btn {
+  background: #1e90ff;
+  border: none;
+  padding: 5px 8px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: red;
+  border: none;
+  padding: 5px 8px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add button */
+.add-btn {
+  background: linear-gradient(90deg, #1e90ff, #00bfff);
+  border: none;
+  padding: 12px 30px;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
