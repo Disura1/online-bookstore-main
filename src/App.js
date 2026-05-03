@@ -13,36 +13,85 @@ import Cashier from "./Admin/Cashier";
 import Lendings from "./Admin/Lendings";
 import Promotions from "./Admin/Promotions";
 import Setting from "./Admin/Setting";
-// Import the Auth items
-import { AuthProvider } from "./components/auth/AuthContext"; 
+import { AuthProvider } from "./components/auth/AuthContext";
 import SignupPage from "./components/auth/Signup";
 import LoginPage from "./components/auth/Login";
+import ProtectedRoute from "./components/auth/ProtectedRoute"; // Import Gatekeeper
 
 function App() {
   return (
-    /* Wrap the entire app in AuthProvider */
     <AuthProvider>
       <BrowserRouter>
         <Navbar />
-
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Books />} />
           <Route path="/books/:id" element={<BookDetails />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/Wishlist" element={<Wishlist />} />
-          <Route path="/Profile" element={<Profile />} />
           <Route path="/Contact" element={<Contact />} />
-          
-          {/* Admin Routes */}
-          <Route path="/Cashier" element={<Cashier />} />
-          <Route path="/Lendings" element={<Lendings />} />
-          <Route path="/Promotions" element={<Promotions />} />
-          <Route path="/Setting" element={<Setting />} />
-        </Routes>
 
+          {/* Customer Only Routes */}
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute allowedRoles={["customer"]}>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Wishlist"
+            element={
+              <ProtectedRoute allowedRoles={["customer"]}>
+                <Wishlist />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Profile"
+            element={
+              <ProtectedRoute allowedRoles={["customer", "admin"]}>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Admin Only Routes */}
+          <Route
+            path="/Cashier"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <Cashier />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Lendings"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <Lendings />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Promotions"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <Promotions />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Setting"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <Setting />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
         <Footer />
       </BrowserRouter>
     </AuthProvider>
