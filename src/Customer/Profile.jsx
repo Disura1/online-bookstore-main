@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../components/auth/AuthContext"; // Import your Auth hook
 import styles from "./Profile.module.css";
 
 export default function MyAccount() {
+  const { user } = useAuth(); // Get the logged-in user data
+  
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -13,39 +16,57 @@ export default function MyAccount() {
     confirmPassword: "",
   });
 
+  // Effect to pre-fill the form when the user data is available
+  useEffect(() => {
+    if (user) {
+      // Logic to split name if your DB only stores 'name' instead of first/last
+      const nameParts = user.name ? user.name.split(" ") : ["", ""];
+      
+      setForm((prev) => ({
+        ...prev,
+        firstName: nameParts[0] || "",
+        lastName: nameParts.slice(1).join(" ") || "",
+        email: user.email || "",
+        // address: user.address || "", // Uncomment if your DB has address
+      }));
+    }
+  }, [user]);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", form);
+    // In a real app, you would call an API here: axios.put('/api/users/update', form)
+    console.log("Updating Profile for:", user.email, form);
+    alert("Changes saved successfully!");
   };
+
+  if (!user) return <div className={styles.container}>Please log in to view this page.</div>;
 
   return (
     <div className={styles.container}>
-
       <div className={styles.topBar}>
         <div className={styles.breadcrumb}>
           Home / <span>My Account</span>
         </div>
         <div className={styles.welcome}>
-          Welcome! <span>User</span>
+          Welcome! <span>{user.name}</span>
         </div>
       </div>
 
       <div className={styles.mainGrid}>
-
         {/* Sidebar */}
         <div className={styles.sidebar}>
-          <h3>Manage My Account</h3>
+          <h3 className={styles.sideTitle}>Manage My Account</h3>
           <ul>
             <li className={styles.active}>My Profile</li>
             <li>Address Book</li>
             <li>Payment Options</li>
           </ul>
 
-          <h3>My Orders</h3>
+          <h3 className={styles.sideTitle}>My Orders</h3>
           <ul>
             <li>Returns</li>
             <li>Cancellations</li>
@@ -58,12 +79,11 @@ export default function MyAccount() {
           </h3>
         </div>
 
-        {/* Form */}
+        {/* Form Section */}
         <div className={styles.formSection}>
           <h2 className={styles.title}>Edit Your Profile</h2>
 
           <form onSubmit={handleSubmit}>
-
             <div className={styles.grid}>
               <div>
                 <label className={styles.label}>First Name</label>
@@ -72,6 +92,7 @@ export default function MyAccount() {
                   name="firstName"
                   value={form.firstName}
                   onChange={handleChange}
+                  placeholder="Enter first name"
                 />
               </div>
 
@@ -82,6 +103,7 @@ export default function MyAccount() {
                   name="lastName"
                   value={form.lastName}
                   onChange={handleChange}
+                  placeholder="Enter last name"
                 />
               </div>
             </div>
@@ -92,8 +114,11 @@ export default function MyAccount() {
                 <input
                   className={styles.input}
                   name="email"
+                  type="email"
                   value={form.email}
                   onChange={handleChange}
+                  placeholder="Enter email"
+                  disabled // Usually email is used as ID and not changed easily
                 />
               </div>
 
@@ -104,11 +129,12 @@ export default function MyAccount() {
                   name="address"
                   value={form.address}
                   onChange={handleChange}
+                  placeholder="Enter address"
                 />
               </div>
             </div>
 
-            <h3>Password Changes</h3>
+            <h3 className={styles.passTitle}>Password Changes</h3>
 
             <div className={styles.passwordGroup}>
               <input
@@ -140,7 +166,11 @@ export default function MyAccount() {
             </div>
 
             <div className={styles.buttons}>
-              <button type="button" className={styles.cancel}>
+              <button 
+                type="button" 
+                className={styles.cancel}
+                onClick={() => window.location.reload()}
+              >
                 Cancel
               </button>
 
@@ -148,10 +178,8 @@ export default function MyAccount() {
                 Save Changes
               </button>
             </div>
-
           </form>
         </div>
-
       </div>
     </div>
   );

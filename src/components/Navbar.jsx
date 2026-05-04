@@ -66,7 +66,7 @@ export default function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          borderBottom: "1px solid #eee",
+          borderBottom: "1px solid #d4d4d4",
           gap: "16px",
           position: "sticky",
           top: 0,
